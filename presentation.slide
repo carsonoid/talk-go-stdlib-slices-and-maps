@@ -1,0 +1,256 @@
+# Go stdlib: `slices` and `maps`
+
+Carson Anderson
+Principal Engineer / DevX-O, Weave
+@carson_ops
+
+https://github.com/carsonoid/talk-go-stdlib-slices-and-maps
+
+## Strategy
+
+* Introduce package functions
+* Show Examples
+* Repeat
+
+## Bonus package: `cmp`!
+
+## `cmp`
+
+* `cmp.Compare`
+* `cmp.Less`
+* `cmp.Or`
+
+## `cmp.Compare` and `cmp.Less`
+
+.play -edit ./examples/cmp/compare-less.go /^func main/,/^}/
+
+## `cmp.Or`
+
+Finally, a go `coalesce` function!
+
+.play -edit ./examples/cmp/or.go /^func main/,/^}/
+
+## Go slices
+
+## Go slice basics:
+
+.play -edit ./examples/slices/basics.go /^func main/,/^}/
+
+## The old ways
+
+.play -edit ./examples/slices/tricks.go /^func main/,/^}/
+
+.link https://go.dev/wiki/SliceTricks
+
+## Enter the `slices` package!
+
+* Added in Go 1.21
+* Extended significantly in 1.23
+
+## Slice Searching
+
+There are helpers to find a needle in a haystack
+
+* `slices.Contains`
+* `slices.ContainsFunc` - Support custom searching!
+* `slices.Index`
+* `slices.IndexFunc` - Support custom searching!
+* `slices.BinarySearch`
+* `slices.BinarySearchFunc` - Support custom searching!
+
+## `slices.Contains` and `slices.ContainsFunc`
+
+.play -edit ./examples/slices/contains.go /^func main/,/^}/
+
+.code ./examples/slices/contains.go /^func findUser/,/^}/
+
+## `slices.Index` and `slices.IndexFunc`
+
+.play -edit ./examples/slices/index.go /^func main/,/^}/
+
+.code ./examples/slices/index.go /^func findUser/,/^}/
+
+## `slices.BinarySearch` and `slices.BinarySearchFunc`
+
+.play -edit ./examples/slices/binary-search.go /^func main/,/^}/
+
+.code ./examples/slices/binary-search.go /^func cmpUser/,/^}/
+
+## Slice Comparison
+
+* `slices.Equal`
+* `slices.EqualFunc` - Can compare different types
+* `slices.Compare`
+* `slices.CompareFunc` - Can compare different types
+
+## `slices.Equal` and `slices.EqualFunc`
+
+.play -edit ./examples/slices/equal.go /^func main/,/^}/
+
+## `slices.Compare` and `slices.CompareFunc`
+
+.play -edit ./examples/slices/compare.go /^func main/,/^}/
+
+## Slice Min Max
+
+* `slices.Min`
+* `slices.MinFunc`- custom compare logic
+* `slices.Max`
+* `slices.MaxFunc`- custom compare logic
+
+## `slices.Min`, `slices.MinFunc`, `slices.Max`, and `slices.MaxFunc`
+
+.play -edit ./examples/slices/min-max.go /^func main/,/^}/
+
+.play -edit ./examples/slices/min-max.go /^func cmpPurchases/,/^}/
+
+## Slices Sorting
+
+* `slices.Sort`
+* `slices.SortFunc` - custom sorting logic
+* `slices.IsSorted`
+* `slices.IsSortedFunc` - custom sorting logic
+
+## `slices.Sort` and `slices.IsSorted`
+
+.play -edit ./examples/slices/sort.go /^func main/,/^}/
+
+## `slices.SortFunc` and `slices.IsSortedFunc`
+
+.play -edit ./examples/slices/sort-func.go /^func main/,/^}/
+
+.play -edit ./examples/slices/sort-func.go /^func sortByAge/,/^}/
+
+## Slice Element Changes
+
+* `slices.Insert`
+* `slices.Delete`
+* `slices.DeleteFunc`
+
+## `slices.Insert`, `slices.Delete` and `slices.DeleteFunc`
+
+.play -edit ./examples/slices/elem-ops.go /^func main/,/^}/
+
+## Slice Manipulation
+
+* `slices.Clip`
+* `slices.Grow`
+* `slices.Clone`
+* `slices.Concat`
+* `slices.Repeat`
+* `slices.Replace`
+* `slices.Compact`
+* `slices.CompactFunc`
+
+## `slices.Grow` and `slices.Clip`
+
+.play -edit ./examples/slices/grow-clip.go /^func main/,/^}/
+
+## `slices.Clone`
+
+.play -edit ./examples/slices/clone.go /^func main/,/^}/
+
+## `slices.Concat`
+
+.play -edit ./examples/slices/concat.go /^func main/,/^}/
+
+## `slices.Repeat` and `slices.Replace`
+
+.play -edit ./examples/slices/repeat-replace.go /^func main/,/^}/
+
+## `slices.Compact` and `slices.CompactFunc`
+
+.play -edit ./examples/slices/compact.go /^func main/,/^}/
+
+## Iterators!
+
+## `slices.All` and `slices.Values`
+
+.play -edit ./examples/slices/iter.go /^func main/,/^}/
+
+## `slices.Backwards`, `slices.Sorted`
+
+.play -edit ./examples/slices/iter-backwards.go /^func main/,/^}/
+
+##  `slices.SortedFunc`, and `slices.SortedStableFunc`
+
+.play -edit ./examples/slices/iter-sort.go /^func main/,/^}/
+
+## What the heck is "stable sorting"?
+
+.play -edit ./examples/slices/iter-sort-vs.go /^func main/,/^}/
+
+.code ./examples/slices/iter-sort-vs.go /START OMIT/,/END OMIT/
+
+## `slices.Chunk` and `slices.Collect`
+
+.play -edit ./examples/slices/iter-chunk.go /^func main/,/^}/
+
+## `slices.AppendSeq`
+
+.play -edit ./examples/slices/iter-append.go /^func main/,/^}/
+
+## Go maps
+
+## Go map basics
+
+.play -edit ./examples/maps/basics.go /^func main/,/^}/
+
+## Enter the `maps` package!
+
+* Added in Go 1.21
+* Extended significantly in 1.23
+
+## `maps` functions
+
+* `maps.Clone`
+* `maps.Copy`
+* `maps.DeleteFunc`
+* `maps.Equal`
+* `maps.EqualFunc`
+
+## `maps.Clone` and `maps.Copy`
+
+.play -edit ./examples/maps/clone-copy.go /^func main/,/^}/
+
+## `maps.DeleteFunc`
+
+.play -edit ./examples/maps/delete.go /^func main/,/^}/
+
+## `maps.Equal` and `maps.EqualFunc`
+
+.play -edit ./examples/maps/equal.go /^func main/,/^}/
+
+.code ./examples/maps/equal.go /^func cmpIntStr/,/^}/
+
+.code ./examples/maps/equal.go /^func cmpUser/,/^}/
+
+## `maps` iterators!
+
+* `maps.All`
+* `maps.Collect`
+* `maps.Insert`
+* `maps.Keys`
+* `maps.Values`
+
+## `maps.All`, `maps.Insert`, and `maps.Collect`
+
+.play -edit ./examples/maps/iter-all-collect.go /^func main/,/^}/
+
+## `maps.Keys` and `maps.Values`
+
+.play -edit ./examples/maps/iter-keys-values.go /^func main/,/^}/
+
+## Mixing iterators for fun and profit
+
+## Get a slice of map keys/values
+
+.play -edit ./examples/mixed/slices-of-kv.go /^func main/,/^}/
+
+## Custom iterators
+
+.play -edit ./examples/mixed/custom.go /START OMIT/,/END OMIT/
+
+## Custom iterators
+
+.play -edit ./examples/mixed/custom.go /^func main/,/^}/
