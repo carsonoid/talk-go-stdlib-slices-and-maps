@@ -1,1 +1,7 @@
-# go stdlib: maps and slices
+# go stdlib: slices and maps
+
+## Run it locally
+
+```sh
+./run
+```
